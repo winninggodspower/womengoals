@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+    font-family: 'Rubik', sans-serif;
+}
+
+:root{
+    --dark: #000000;
+    --amber: #FFCA47;
+    --ash: #f2f2f2;
+}
+
+/* defining global classes */
+.bg-dark{
+    background-color: var(--dark) !important;
+}
+
+.bg-amber{
+    background-color: var(--amber);
+}
+
+.bg-ash{
+    background-color: var(--ash);
+}
+
+.text-amber{
+    color: var(--amber);
+}
+
+
+/* navbar styling */
+.nav-link{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.nav-link:hover{
+    color: var(--amber) !important;
+}
+
+.nav-link.active{
+    color: var(--amber) !important;
+}
+
+
+/* hero section styling */
+section#hero-section{
+    height: 600px;
+    min-height: fit-content;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) , url(../assets/img/hero-bg-img.png);
+    background-size: cover;
+}
+
+#inner-hero-text-wrapper{
+    width: 944px;
+    max-width: 100%;
+}
+
+#heading-text{
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+#call-to-action-btn{
+    color: var(--amber);
+    border-color: var(--amber);
+    width: 196px;
+    height: 56px;
+
+    font-size: 20px !important;
+}
+
+#call-to-action-btn:hover{
+    color: black !important;
+/* 
+    // On click
+// Navigate to: "Frame 3";
+// Animate: Move in Right;
+// Spring: { mass: 1, stiffness: 80, damping: 20 }; */
+
+}
