@@ -33,6 +33,34 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 21px;
+    color: white;
+
+    position: relative;
+    transition: all 0.6s;
+}
+
+.nav-link::before,
+[aria-current]::before{
+    position: absolute;
+    content: "";
+
+    left: 0.5rem;
+    bottom: -3px;
+    width: 50%;
+    height: 2px;
+    background-color: var(--amber);
+    
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.6s;
+}
+
+[aria-current]::before{
+    transform: scaleX(1);
+}
+
+.nav-link:hover::before{
+    transform: scale(1);
 }
 
 .nav-link:hover{
@@ -62,6 +90,8 @@ section#hero-section{
     font-size: 26px;
     font-weight: 400;
     line-height: 36px;
+
+    margin-bottom: 29px !important;
 }
 
 #call-to-action-btn{
@@ -71,14 +101,31 @@ section#hero-section{
     height: 56px;
 
     font-size: 20px !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.6s;
 }
 
 #call-to-action-btn:hover{
-    color: black !important;
-/* 
-    // On click
-// Navigate to: "Frame 3";
-// Animate: Move in Right;
-// Spring: { mass: 1, stiffness: 80, damping: 20 }; */
+    background-color: transparent;
+    color: black;
+}
 
+#call-to-action-btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 99%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--amber);
+    
+    transform: translateX(-100%);
+    transition: all 0.3s;
+}
+
+#call-to-action-btn:hover::before{
+    transform: translateX(0);
 }
