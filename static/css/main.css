@@ -221,4 +221,87 @@ h2{
 
 .aim-item p{
     text-align: center;
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 300 !important;
+    line-height: 34px;
+    text-align: center;
+
+}
+
+
+/* styling for the visin / mision section */
+#vision{
+    margin-top: 125px;
+    padding-bottom: 92px;
+}
+
+.vision-item{
+    height: 312px;
+    width: 572px;
+    max-width: 100%;
+    background: #100F0F;
+    box-shadow: 0px 12px 60px 0px #00000073;
+
+    padding: 95px ;
+
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 34px;
+
+}
+
+.vision-item:last-child{
+    padding: 75px;
+}
+
+
+/* styling for the activities/projects section */
+#project-timeline{
+    grid-template-columns: 1fr 3px 1fr;
+    grid-column-gap: 3px;
+}
+
+
+.timeline-middle{
+    position: relative;
+    background-color: white;
+}
+
+.timeline-point{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 52px;
+    height: 52px;
+    background-color: var(--amber);
+    transform: translateX(-50%);
+
+    border: 2px solid #FFFFFF;
+}
+
+.timeline-component h4{
+    font-family: Rubik;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43px;
+    letter-spacing: 0em;
+
+}
+
+.timeline-component p{
+
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+
+}
+
+.timeline-component p span.emphasized {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 34px;
 }
