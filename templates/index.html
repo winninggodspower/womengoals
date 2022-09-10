@@ -1,78 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WOMENGGOALS</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tonye Taylor</title>
-
-  <!-- bootstrap local link -->
-  <!-- <link rel="stylesheet" href="../static/bootstrap-5.1.3/dist/css/bootstrap.min.css">
+    <!-- bootstrap local link -->
+    <!-- <link rel="stylesheet" href="../static/bootstrap-5.1.3/dist/css/bootstrap.min.css">
     <script src="../static/bootstrap-5.1.3/dist/js/bootstrap.min.js"></script> -->
 
-  <!----------------- bootstrap cdn ----------------->
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!----------------- bootstrap cdn ----------------->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
 
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
 
-  <link rel="stylesheet" href="../static/css/main.css">
-</head>
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/media-queries.css" />
+  </head>
 
-<body class="overflowx-hidden text-white">
-
-  <header class="">
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark opacity-75">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="..\static\assets\img\women-goals-icon.png" alt="Logo" width="45" height="45" class="">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav text-center ms-auto">
-            <li class="nav-item fw-bold ms-2">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item fw-bold ms-2">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item fw-bold ms-2">
-              <a class="nav-link" href="#">Our Projects</a>
-            </li>
-            <li class="nav-item fw-bold ms-2">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-            <li class="nav-item fw-bold ms-2">
-              <a class="nav-link" href="#">Join Us</a>
-            </li>
-          </ul>
+  <body class="overflowx-hidden text-white">
+    <header class="">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark opacity-75">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="..\static\assets\img\women-goals-icon.png"
+              alt="Logo"
+              width="45"
+              height="45"
+              class=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-center ms-auto">
+              <li class="nav-item fw-bold ms-2">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item fw-bold ms-2">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item fw-bold ms-2">
+                <a class="nav-link" href="#">Our Projects</a>
+              </li>
+              <li class="nav-item fw-bold ms-2">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item fw-bold ms-2">
+                <a class="nav-link" href="#">Join Us</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <section id="hero-section">
-      <div class="d-flex justify-content-center align-items-center h-100 mx-auto container">
-        <div id="inner-hero-text-wrapper" class="text-center col-md-8 text-white">
-          <p id="heading-text" class="lead fw-normal">A volunteer group that focuses on empowering the Girl child,Women with 
-          the right tools to becoming self reliant through increased knowledge and skills</p>
-          <a id="call-to-action-btn" class="btn btn-outline-warning btn-lg rounded-0" href="#">Coming soon</a>
+      <section id="hero-section">
+        <div
+          class="d-flex justify-content-center align-items-center h-100 mx-auto container"
+        >
+          <div
+            id="inner-hero-text-wrapper"
+            class="text-center col-md-8 text-white"
+          >
+            <p id="heading-text" class="lead fw-normal">
+              A volunteer group that focuses on empowering the Girl child,Women
+              with the right tools to becoming self reliant through increased
+              knowledge and skills
+            </p>
+            <a
+              id="call-to-action-btn"
+              class="btn btn-outline-warning btn-lg rounded-0 p-auto"
+              href="#"
+              >JOIN US</a
+            >
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </header>
 
-  </header>
+    <main class="bg-dark">
+      <section id="about-us">
+        <div class="container">
+          <h2 class="text-amber text-center">About Us</h2>
 
-  
+          <div class="row">
+            <div
+              class="col-12 col-md-5 position-relative d-flex justify-content-center"
+            >
+              <img
+                src="..\static\assets\img\about-us-img.png"
+                alt=""
+                width="287"
+                height="280px"
+              />
+              <div class="position-absolute bg-amber" id="v-line"></div>
+              <div class="position-absolute bg-amber" id="h-line"></div>
+            </div>
 
-</body>
+            <div
+              id="about-description"
+              class="col-12 col-md text-justify px-5 px-md-0 pt-2 pt-md-0"
+            >
+              Women Goals is a Non governmental organisation aimed to help the
+              female gender recognise their place in the society, help them
+              become who they dream of becoming and finally assisting them in
+              the little way we can. We are a volunteer group that focuses on
+              empowering the girl child, women with the right tools to becoming
+              self reliant through increased knowledge and skill This platform
+              covers a whole lot of humanitarian services such as outreach,
+              donations and educative events.
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section id="aim" class="container">
+        <h2 class="text-amber text-center">Aims / Objections</h2>
+
+        <div class="aim-item-container">
+
+          <div class="aim-item">
+            <h4>Hope</h4>
+            <p>Bringing hope to underprivileged Females in our society.</p>
+          </div>
+          <div class="aim-item">
+            <h4>Female Education</h4>
+            <p>
+              To provide underprivileged female children with a well-rounded
+              education.
+            </p>
+          </div>
+          <div class="aim-item">
+            <h4>Community Service</h4>
+            <p>
+              To increase the awareness of the female child and of the need to
+              participate in community service initiatives.
+            </p>
+          </div>
+          <div class="aim-item">
+            <h4>Leadership</h4>
+            <p>
+              To raise a generation of change agents/nation builders with good
+              leadership qualities.
+            </p>
+          </div>
+          <div class="aim-item">
+            <h4>Mentorship</h4>
+            <p>
+              To provide valuable and life changing mentorship to children in
+              general both male and female.
+            </p>
+          </div>
+          <div class="aim-item">
+            <h4>Skill Acquisition</h4>
+            <p>
+              To train as many females as we can to be independent by skill
+              acquisition
+            </p>
+          </div>
+
+        </div>
+
+        <div class="px-auto d-flex">
+          <button id="call-to-action-btn" class="btn btn-outline-warning btn-lg rounded-0 p-auto mx-auto" href="#">JOIN US</button>
+        </div>
+
+      </section>
+    </main>
+  </body>
 </html>
