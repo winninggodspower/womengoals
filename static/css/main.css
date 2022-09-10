@@ -305,3 +305,7 @@ h2{
     font-weight: 700;
     line-height: 34px;
 }
+
+.timeline-component img{
+    max-width: 100%;
+}
