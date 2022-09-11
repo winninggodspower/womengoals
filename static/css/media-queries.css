@@ -11,12 +11,34 @@
         grid-template-columns: 1fr;
     }
 
-    #project-timeline{
-        grid-template-columns: 3px 1fr 1fr;
+    .project-timeline{
+        grid-template-columns: 30px 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "timeline-point timeline-text"
+            "timeline-point timeline-img"
+        ;
         grid-column-gap: 3px;
     }
 
     .timeline-middle{
-        grid-area: 1/2;
+        grid-area: timeline-point;
+        margin: auto;
+        height: 100%;
+    }
+
+    .timeline-text{
+        grid-area: timeline-text;
+    }
+
+    .timeline-img-container{
+        grid-area: timeline-img;
+    }
+ }
+
+
+ @media (max-width: 558px) { 
+    .timeline-img-container{
+       /* transform: scale(0.7);  */
     }
  }
