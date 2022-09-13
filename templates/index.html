@@ -21,8 +21,10 @@
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
 
-  <!-- bootstrap icon cdn -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!-- glidee carusel library  -->
+  <link rel="stylesheet" href="../static/css/glider.min.css">
+  <script src="../static/js/glider.min.js"></script>
+  <script src="../static/js/main.js"></script>
 
   <link rel="stylesheet" href="../static/css/main.css" />
   <link rel="stylesheet" href="../static/css/media-queries.css" />
@@ -331,32 +333,58 @@
     <h2 class="text-amber text-center"> Meet The Team</h2>
 
     <div class="container">
-      <div class="carousel d-flex justify-content-around align-items-center position-relative">
+      <div class="carousel glider-contain d-flex justify-content-around align-items-center position-relative">
 
-        <div id="left-arrow position-absolute start-0">
+        <div id="left-arrow " class="glider-prev position-absolute">
           <img src="../static/assets/icons/bi_arrow-left.svg" alt="">
         </div>
-        <div class="carousel-img">
-          <img class="mx-auto" src="../static/assets/team-image/sofia-enoch.png" alt="">
+        <div class="carousel-img glider">
+          <div class="p-0 m-0 d-flex flex-column justify-content-center">
+            <img  id="sofia-enoch-img" class="mx-auto" src="../static/assets/team-image/sofia-enoch.png" width="509px" height="408px" alt="">
+            <div id="carousel-text" class="text-center glider">
+              <h4 class="m-0">Sophia Onyeka Enoch</h4>
+              <p class="m-0">Team Lead</p>
+            </div>
+          </div>
+          <div class="p-0 m-0 d-flex flex-column justify-content-center">
+            <img class="mx-auto" src="../static/assets/team-image/Tochi.png" width="408px" height="526px" alt="">
+            <div id="carousel-text" class="text-center glider">
+              <h4 class="m-0">Tochi Madueke</h4>
+              <p class="m-0">Admin/ Finance Manager</p>
+            </div>
+          </div>
+          <div class="p-0 m-0 d-flex flex-column justify-content-center">
+            <img class="mx-auto" src="../static/assets/team-image/jenifer.png" width="429px" height="531px" alt="">
+            <div id="carousel-text" class="text-center glider">
+              <h4 class="m-0">Jennifer Oliko</h4>
+              <p class="m-0">Co-Founder</p>
+            </div>
+          </div>
+          <div class="p-0 m-0 d-flex flex-column justify-content-center">
+            <img class="mx-auto" src="../static/assets/team-image/obiageli.png" width="446px" height="575px" alt="">
+            <div id="carousel-text" class="text-center glider">
+              <h4 class="m-0">Obiageli Iloakasia</h4>
+              <p class="m-0">Programs Manager</p>
+            </div>
+          </div>
+          <div class="p-0 m-0 d-flex flex-column justify-content-center">
+            <img class="mx-auto" src="../static/assets/team-image/sophia-Joshua.png" width="452px" height="502px" alt="">
+            <div id="carousel-text" class="text-center glider">
+              <h4 class="m-0">Sophia Joshua</h4>
+              <p class="m-0">Communications Manager</p>
+            </div>
+          </div>
+        
         </div>
-        <div id="right-arrow position-absolute end-0">
+
+        <div id="right-arrow " class="glider-next position-absolute">
           <img src="../static/assets/icons/bi_arrow-right.svg" alt="">
         </div>
 
       </div>
 
-      <div id="carousel-text" class="text-center">
-        <h4 class="m-0">Sophia Onyeka Enoch</h4>
-        <p class="m-0">Team Lead</p>
-      </div>
 
-      <div id="carousel-navigation" class="text-center">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div id="carousel-navigation" class="text-center dots">
       </div>
 
     </div>

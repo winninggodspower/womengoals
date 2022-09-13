@@ -348,6 +348,14 @@ h2{
 
 }
 
+#left-arrow{
+    left: 20px !important;
+}
+
+#right-arrow{
+    right: 20px !important;
+}
+
 #left-arrow, #right-arrow{
     --size: 56px;
     width: var(--size);
@@ -361,25 +369,16 @@ h2{
     max-width: 90%;
 }
 
-#carousel-navigation span{
-    --size: 10px;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    background-color: white;
-    display: inline-block;
-    cursor: pointer;
-    margin-right: 2px;
-
+.carousel-img:nth-child(1){
+    width:509px !important; 
+    height:408px !important ;
 }
 
-#carousel-navigation span:last-of-type{
-    margin-right: 0px;
+#sofia-enoch-img{
+    width:408px !important;
+    height:526px !important;
 }
 
-#carousel-navigation span:hover{
-    background-color: var(--amber);
-}
 
 #carousel-text h4{
     font-family: Playfair Display;
