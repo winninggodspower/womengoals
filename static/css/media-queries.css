@@ -41,4 +41,16 @@
     .timeline-img-container{
        /* transform: scale(0.7);  */
     }
+
+    footer ul{
+        width: 100% !important;
+    }
+
+ }
+
+ @media (max-width: 442px) { 
+    .list-group-item a{
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
  }
