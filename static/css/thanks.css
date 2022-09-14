@@ -1,0 +1,59 @@
+@import url('./main.css');
+
+#side-img-wrapper{
+    padding: 20px 20px;
+}
+
+
+#thanks-text{
+    padding-top: 30px;
+}
+
+#side-img-wrapper{
+    height: 55%;
+    min-height: fit-content;
+}
+
+h1{
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 76px;
+    letter-spacing: 0em;
+}
+
+p{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+}
+
+h2.account-number{
+    font-size: 96px;
+    font-weight: 500;
+    line-height: 114px;
+    letter-spacing: 0em;
+    color: #20B807;
+}
+
+h4.account-bank{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 57px;
+    letter-spacing: 0em;
+    color: #DB0505;
+}
+
+p.account-name{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 43px;
+    letter-spacing: 0em;
+}
+
+@media (max-width: 500px) {
+    #side-img-wrapper{
+        height: 55%;
+        min-height: fit-content;
+    }
+}
