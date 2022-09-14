@@ -1,0 +1,460 @@
+@import url('./main.css');
+
+
+html, body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* navbar styling */
+.nav-link{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    color: white;
+
+    position: relative;
+    transition: all 0.6s;
+}
+
+.nav-link::before,
+[aria-current]::before{
+    position: absolute;
+    content: "";
+
+    left: 0.5rem;
+    bottom: -3px;
+    width: 50%;
+    height: 2px;
+    background-color: var(--amber);
+    
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.6s;
+}
+
+[aria-current]::before{
+    transform: scaleX(1);
+}
+
+.nav-link:hover::before{
+    transform: scale(1);
+}
+
+.nav-link:hover{
+    color: var(--amber) !important;
+}
+
+.nav-link.active{
+    color: var(--amber) !important;
+}
+
+
+/* hero section styling */
+section#hero-section{
+    height: 600px;
+    min-height: fit-content;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) , url(../assets/img/hero-bg-img.png);
+    background-size: cover;
+}
+
+#inner-hero-text-wrapper{
+    width: 944px;
+    max-width: 100%;
+}
+
+#heading-text{
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 36px;
+
+    margin-bottom: 29px !important;
+}
+
+.amber-btn{
+    color: var(--amber);
+    border-color: var(--amber) !important;
+    width: 196px;
+    height: 56px;
+
+    font-size: 20px !important;
+    font-weight: 400;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.6s;
+}
+
+#call-to-action-btn:hover{
+    background-color: transparent;
+    color: black;
+}
+
+#call-to-action-btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 99%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--amber);
+    
+    transform: translateX(-100%);
+    transition: all 0.3s;
+}
+
+#call-to-action-btn:hover::before{
+    transform: translateX(0);
+}
+
+/* styling for the main element */
+main{
+    padding-top: 98px;
+}
+
+/* styling for the about us section */
+
+#about-us{
+    margin-top: 52px;
+    padding-bottom: 76px;
+    --bottom: 20px;
+    --left: 41px;
+}
+
+h2{
+    font-family: Playfair Display;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+
+    margin-bottom: 27px;
+}
+
+#about-description{
+    min-height: 340px;
+
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+}
+
+#v-line{
+
+    width: 0px;
+    height: 218.9083709716797px;
+
+    left: var(--left);
+    bottom: var(--bottom);
+
+    border: 2px solid var(--amber);
+    background: var(--amber);
+
+}
+
+
+#h-line{
+    height: 0px;
+    width: 218.9083709716797px;
+    left: var(--left);
+    bottom: var(--bottom);
+    background: var(--amber);
+    border: 2px solid var(--amber);
+}
+
+/* styling for the aim section */
+
+.aim-item-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-bottom: 80px;
+}
+
+.aim-item{
+    padding: 42px 30px;
+    background: #100F0F;
+    box-shadow: 0px 12px 60px 0px #00000073;
+    height: 262px;
+}
+
+.aim-item h4{
+    font-family: Playfair Display;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 27px;
+
+    text-align: center;
+}
+
+.aim-item p{
+    text-align: center;
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 300 !important;
+    line-height: 34px;
+    text-align: center;
+
+}
+
+
+/* styling for the visin / mision section */
+#vision{
+    margin-top: 125px;
+    padding-bottom: 92px;
+}
+
+.vision-item{
+    height: 312px;
+    width: 572px;
+    max-width: 100%;
+    min-height: max-content;
+    background: #100F0F;
+    box-shadow: 0px 12px 60px 0px #00000073;
+
+    padding: 95px ;
+
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 34px;
+
+}
+
+.vision-item:last-child{
+    padding: 75px;
+}
+
+
+/* styling for the activities/projects section */
+#activities h2{
+    margin-bottom: 129px;
+}
+
+.project-timeline{
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+    grid-column-gap: 3px;
+
+    max-width: 100% !important;
+}
+
+
+.timeline-middle{
+    position: relative;
+    background-color: white;
+    width: 3px;
+}
+
+.timeline-point{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 52px;
+    height: 52px;
+    background-color: var(--amber);
+    transform: translateX(-50%);
+
+    border: 2px solid #FFFFFF;
+}
+
+.timeline-component h4{
+    font-family: Rubik;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43px;
+    letter-spacing: 0em;
+
+}
+
+.timeline-component p{
+
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+
+}
+
+.timeline-component p span.emphasized {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.timeline-component img{
+    max-width: 100% !important;
+}
+
+
+/* carouserl section styling */
+
+#sponsor-us{
+    padding-top: 62px;
+    margin-bottom: 125px;
+
+    font-family: Rubik;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+#team-preview h2{
+    margin-bottom: 64px;
+    font-family: Playfair Display;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+#left-arrow{
+    left: 20px !important;
+}
+
+#right-arrow{
+    right: 20px !important;
+}
+
+#left-arrow, #right-arrow{
+    --size: 56px;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+
+}
+
+.carousel-img img{
+    background-blend-mode: darken;
+    max-width: 90%;
+}
+
+.carousel-img:nth-child(1){
+    width:509px !important; 
+    height:408px !important ;
+}
+
+#sofia-enoch-img{
+    width:408px !important;
+    height: auto;
+}
+
+
+#carousel-text h4{
+    font-family: Playfair Display;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-top: 13px !important;
+}
+
+#carousel-text p{
+    font-family: Rubik;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-top: 5px !important;
+}
+
+#carousel-navigation{
+    margin-top: 33px;
+}
+
+
+/* styling for the contact form section */
+#contact-form-section{
+    padding-bottom: 100px;
+}
+#contact-form-section h2{
+    margin-bottom: 90px !important;
+    padding-top: 146px !important;
+}
+
+#illustration{
+    width: 474px !important;
+    padding-left: 43px;
+    padding-top: 63px;
+}
+
+#illustration img{
+    max-width: 100%;
+}
+
+.list-group-item a{
+    color: white;
+    text-decoration: none;
+}
+
+.list-group-item a:hover{
+    color: var(--amber);
+}
+
+#contact-form p{
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+
+.form-group{
+    margin-top: 24px;
+}
+
+.form-group:first-of-type{
+    margin-top: 32px;
+}
+
+.form-group label{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+
+}
+
+input.form-control{
+    height: 56px !important;
+}
+
+textarea.form-control{
+    height: 152px !important;
+    margin-bottom: 48px;
+
+}
+
+.btn-submit{
+    height: 56px;
+    width: 196px;
+    border: 2px solid var(--amber) !important;
+    color: var(--amber);
+    font-family: Rubik;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+
+}
+
+
+.list-group-item{
+    margin-top: calc(25px - 1rem);
+}
+
+.list-group-item a{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-left: 27px;
+}
