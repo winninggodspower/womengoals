@@ -26,6 +26,10 @@
   <script src="../static/js/glider.min.js"></script>
   <script src="../static/js/main.js"></script>
 
+  <!-- aos animation onscroll cdn -->
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+  <link href="../static/aos/aos.css" rel="stylesheet">
+
   <link rel="stylesheet" href="../static/css/home.css" />
   <link rel="stylesheet" href="../static/css/media-queries.css" />
 </head>
@@ -65,7 +69,7 @@
 
     <section id="hero-section">
       <div class="d-flex justify-content-center align-items-center h-100 mx-auto container">
-        <div id="inner-hero-text-wrapper" class="text-center col-md-8 text-white">
+        <div id="inner-hero-text-wrapper" class="text-center col-md-8 text-white"  data-aos="fade-up" data-aos-duration="1000"  data-aos-easing="ease-out" >
           <p id="heading-text" class="lead fw-normal">
             A volunteer group that focuses on empowering the Girl child,Women
             with the right tools to becoming self reliant through increased
@@ -108,39 +112,39 @@
 
       <div class="aim-item-container">
 
-        <div class="aim-item">
+        <div class="aim-item" data-aos="fade-down-right">
           <h4 class="text-break">Hope</h4>
           <p>Bringing hope to underprivileged Females in our society.</p>
         </div>
-        <div class="aim-item">
+        <div class="aim-item" data-aos="fade-down"  data-aos-delay="100">
           <h4 class="text-break">Female Education</h4>
           <p>
             To provide underprivileged female children with a well-rounded
             education.
           </p>
         </div>
-        <div class="aim-item">
+        <div class="aim-item" data-aos="fade-down-left"  data-aos-delay="200">
           <h4 class="text-break">Community Service</h4>
           <p>
             To increase the awareness of the female child and of the need to
             participate in community service initiatives.
           </p>
         </div>
-        <div class="aim-item">
+        <div class="aim-item" data-aos="fade-up-right"  data-aos-delay="300">
           <h4 class="text-break">Leadership</h4>
           <p>
             To raise a generation of change agents/nation builders with good
             leadership qualities.
           </p>
         </div>
-        <div class="aim-item">
+        <div class="aim-item" data-aos="fade-up"  data-aos-delay="400">
           <h4 class="text-break">Mentorship</h4>
           <p>
             To provide valuable and life changing mentorship to children in
             general both male and female.
           </p>
         </div>
-        <div class="aim-item">
+        <div class="aim-item" data-aos="fade-up-left"  data-aos-delay="500">
           <h4 class="text-break">Skill Acquisition</h4>
           <p>
             To train as many females as we can to be independent by skill
@@ -161,11 +165,11 @@
       <h2 class="text-amber text-center"> Vision / Mission</h2>
       <div class="d-flex flex-column flex-md-row " id="vision-item-container">
 
-        <div class="vision-item me-0 me-md-3 p-auto text-center d-flex align-items-center">
+        <div class="vision-item me-0 me-md-3 p-auto text-center d-flex align-items-center" data-aos="flip-left">
           To ensure every Girl/Woman is living their best life, achieving their dreams.
         </div>
 
-        <div class="vision-item p-auto text-center  d-flex align-items-center mt-2 mt-md-0">
+        <div class="vision-item text-center  d-flex align-items-center mt-2 mt-md-0" data-aos="flip-right">
           Empowering the Girl child and Women with the right tools to becoming self reliant through increased knowledge
           and skills
         </div>
@@ -181,7 +185,7 @@
 
     <div id="project-timeline-container" class="container d-grid">
 
-      <div class="project-timeline">
+      <div class="project-timeline" data-aos="fade-up" data-aos-duration="1000">
 
         <div class="timeline-text timeline-component pe-5 mb-0 mb-md-5 ps-3 ps-md-0 ">
           <h4 class="text-break">IG GIRL TALK</h4>
@@ -489,6 +493,26 @@
     </ul>
     </div>
   </footer>
+
+  
+  <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+  <script src="../static/aos/aos.js"></script>
+  <script>
+      const timelineProject = document.getElementsByClassName('timeline-component');
+
+      for (let i = 0; i < timelineProject.length; i++) {
+        const element = timelineProject[i];
+
+        element.setAttribute('data-aos', 'fade-up') 
+        element.setAttribute('data-aos-duration', '1000')
+        // element.lastChild.setAttribute('data-aos', 'fade-up')
+        // element.lastChild.setAttribute('data-aos-duration', '1000')
+        
+      }
+      AOS.init();
+
+
+  </script>
 
 </body>
 

@@ -218,7 +218,7 @@ h2{
     background: #100F0F;
     box-shadow: 0px 12px 60px 0px #00000073;
 
-    padding: 95px ;
+    padding: 1em;
 
     font-family: Rubik;
     font-size: 21px;
@@ -226,11 +226,6 @@ h2{
     line-height: 34px;
 
 }
-
-.vision-item:last-child{
-    padding: 75px;
-}
-
 
 /* styling for the activities/projects section */
 #activities h2{
