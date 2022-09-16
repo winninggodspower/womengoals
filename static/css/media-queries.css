@@ -22,18 +22,10 @@
     }
 
     .timeline-middle{
-        grid-area: timeline-point;
         margin: auto;
         height: 100%;
     }
 
-    .timeline-text{
-        grid-area: timeline-text;
-    }
-
-    .timeline-img-container{
-        grid-area: timeline-img;
-    }
  }
 
 

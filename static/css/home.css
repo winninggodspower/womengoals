@@ -215,7 +215,6 @@ h2{
     width: 572px;
     max-width: 100%;
     min-height: max-content;
-    background: #100F0F;
     box-shadow: 0px 12px 60px 0px #00000073;
 
     padding: 1em;
@@ -234,14 +233,26 @@ h2{
 
 .project-timeline{
     display: grid;
-    grid-template-columns: 1fr 3px 1fr;
+    grid-template-columns: 40px 1fr 1fr;
     grid-column-gap: 3px;
+    grid-template-areas: 
+            "timeline-point timeline-text timeline-img"
+            "timeline-point timeline-text timeline-img"
+        ;
 
     max-width: 100% !important;
 }
 
+.timeline-text{
+    grid-area: timeline-text;
+}
+
+.timeline-img-container{
+    grid-area: timeline-img;
+}
 
 .timeline-middle{
+    grid-area: timeline-point;
     position: relative;
     background-color: white;
     width: 3px;
