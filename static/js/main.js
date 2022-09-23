@@ -1,5 +1,7 @@
+
 window.addEventListener('load', function(){
-    const carouselSetting =  {
+
+    new Glider(document.querySelector('.glider'), {
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
@@ -9,10 +11,6 @@ window.addEventListener('load', function(){
             prev: '.glider-prev',
             next: '.glider-next'
         }
-    }
-
-    new Glider(document.querySelector('.glider'), carouselSetting)
-
-
+    })
 
   })

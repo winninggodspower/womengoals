@@ -6,6 +6,14 @@ html, body{
     overflow-x: hidden;
 }
 
+.Slides{
+    display: none;
+}
+
+.carousel-next, .carousel-prev{
+    cursor: pointer;
+}
+
 /* navbar styling */
 .nav-link{
     font-size: 18px;
@@ -245,6 +253,10 @@ h2{
 
 .timeline-text{
     grid-area: timeline-text;
+}
+
+.timeline-text p{
+    text-align: justify;
 }
 
 .timeline-img-container{

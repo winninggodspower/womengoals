@@ -1,0 +1,20 @@
+footer > div.container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "top"
+    "middle"
+    "buttom";
+}
+
+@media (max-width: 768px) { 
+    #footer-links{
+        grid-area: top;
+        /* margin-bottom: 55px !important; */
+    }
+    
+
+}
+
+
+

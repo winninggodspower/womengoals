@@ -11,6 +11,10 @@
         grid-template-columns: 1fr;
     }
 
+    .vision-item{
+        border-radius: 5px;
+    }
+
     .project-timeline{
         grid-template-columns: 30px 1fr;
         grid-template-rows: auto auto;
