@@ -2,15 +2,13 @@ $(document).ready(()=>{
     const API_KEY = 'clJ1bkpEYkRVemZTa21kSTNMd1dCOXJudDB1eW9wQ0Y1OEZhdGppMw==';
     let countryList ;
 
-    const countryForm = $('#country-form');
-    const stateForm = $('#state-form');
+    const countryForm = $('#country');
+    const stateForm = $('#state');
 
     countryForm.on('change',(option)=>{
       stateForm.attr('disabled', false)
       selectedOption = option.currentTarget.value;
-      console.log(countryList);
       selectedOptionOsi = countryList.filter((country)=> country.name == selectedOption)[0]
-      console.log(selectedOptionOsi);
       getStates(selectedOptionOsi.iso2)
     })
 
@@ -46,7 +44,6 @@ $(document).ready(()=>{
           },
         success: function(data){
             let stateList = data.map((data)=> data.name )
-            console.log(stateList);
             createStateOption(stateList)
         }
       

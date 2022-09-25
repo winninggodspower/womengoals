@@ -34,36 +34,50 @@
             <div class="col-12 col-md  flex">
 
                 
-                <form action="" method="POST" role="form" class="mx-auto ">
+                <form action="" id="volunteer-form" method="POST" role="form" class="mx-auto ">
                     <legend>Join other vollunteers today!</legend>
                 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="" placeholder="Full name">
+                        <input type="text" class="form-control" id="" name="username" required placeholder="Full name">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="" placeholder="Phone number">
+                        <input type="text" class="form-control" id="" name="phone" required placeholder="Phone number">
                     </div>
 
-                    <select id="country-form" aria-label="Default select example" hx-get="https://api.countrystatecity.in/v1/countries">
-                        <option selected>Choose country</option>
-                    </select>
+                    <div>
+                        <select id="country" aria-label="Default select example" name="country" required>
+                            <option selected value="Choose country">Choose country</option>
+                        </select>
+                        <div id="country-error-field" class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
 
-                    <select id="state-form" aria-label="Default select example" disabled="true">
-                        <option selected>Choose state</option>
-                    </select>
+                    <div>
+                        <select id="state" name="state" aria-label="Default select example" disabled="true" required>
+                            <option selected value="Choose state">Choose state</option>
+                        </select>
+                        <div id="state-error-field" class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
 
-                    <select id="department-form" aria-label="Default select example" disabled="true">
-                        <option selected>Choose departnment</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                    <div>
+                        <select id="department" name="department" aria-label="Default select example" required>
+                            <option selected value="Choose department">Choose departnment</option>
+                            <option value="Communication team">Communication team</option>
+                            <option value="Project management team">Project management team</option>
+                            <option value="Walfare team">Walfare team</option>
+                        </select>
+                        <div id="department-error-field" class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <textarea type="text" class="form-control" id="" placeholder="Have any concern? Please live us a note."></textarea>
                     </div>
-                
                     
                 
                     <button type="submit" class="btn btn-warning w-100 bg-amber rounded-0 ">Submit</button>
@@ -91,6 +105,7 @@
         </div>
 
     </main>
+    <script src="../static/js/volunteer.js"></script>
 </body>
 
 </html>
