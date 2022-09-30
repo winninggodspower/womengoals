@@ -1,8 +1,9 @@
-from flask import Flask,redirect,url_for,render_template,request
+from flask import Flask,redirect,url_for,render_template,request, flash
 from flask_mail import Mail, Message
 import os
 
 app = Flask(__name__)
+
 mail = Mail(app)
 
 
@@ -53,6 +54,7 @@ def home():
         )
         
         send_contact_email(user_info)
+        flash("Youv've successfully contacted womensgoal. We'll reply your message soon. ", "Success")
         return render_template('index.html')
 
     return render_template('index.html')
@@ -71,7 +73,7 @@ def volunteer():
         print(user_info)
         
         send_volunteer_email(user_info)
-        return render_template('volluteer.html')
+        return render_template('thanks.html')
 
     return render_template('volluteer.html')
 
@@ -87,4 +89,5 @@ def sponsor():
 
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
+    app.secret_key = r"this is secret"
     app.run(port=5000,debug=True)

@@ -69,6 +69,17 @@
       </div>
     </nav>
 
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <div class="container my-2 text-dark alert alert-primary alert-dismissible fixed-top " role="alert">
+        <div>{{message}}</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
     <section id="hero-section">
       <div class="d-flex justify-content-center align-items-center h-100 mx-auto container">
         <div id="inner-hero-text-wrapper" class="text-center col-md-8 text-white"  data-aos="fade-up" data-aos-duration="1000"  data-aos-easing="ease-out" >
