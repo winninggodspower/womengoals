@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark opacity-75">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="..\static\assets\img\women-goals-icon.png" alt="Logo" width="45" height="45" class="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav text-center ms-auto">
+          <li class="nav-item fw-bold ms-2">
+            <a class="nav-link px-4 px-sm-2 active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item fw-bold ms-2">
+            <a class="nav-link px-4 px-sm-2" href="#about-us">About Us</a>
+          </li>
+          <li class="nav-item fw-bold ms-2">
+            <a class="nav-link px-4 px-sm-2" href="#activities">Our Projects</a>
+          </li>
+          <li class="nav-item fw-bold ms-2">
+            <a class="nav-link px-4 px-sm-2" href="#contact-form-section">Contact Us</a>
+          </li>
+          <li class="nav-item fw-bold ms-2">
+            <a class="nav-link px-4 px-sm-2" href="/volunteer">Join Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <div class="container my-2 text-dark alert alert-primary alert-dismissible fixed-top " role="alert">
+      <div>{{message}}</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+  {% endif %}
+  {% endwith %}

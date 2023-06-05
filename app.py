@@ -1,10 +1,15 @@
-from flask import Flask,redirect,url_for,render_template,request, flash
+from flask import Flask, redirect, url_for, render_template, request, flash
 from flask_mail import Mail, Message
 import os
 
-app = Flask(__name__)
+from blog import blog
+from blog import db, DbConfig
 
+from blog.blog import BlogConfig
+
+app = Flask(__name__)
 mail = Mail(app)
+
 
 
 #configuration of mail
@@ -17,6 +22,7 @@ app.config.update(dict(
     MAIL_USERNAME = os.environ.get("EMAIL_ID"),
     MAIL_PASSWORD = os.environ.get("EMAIL_PW"),
 ))
+app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 mail = Mail(app)
 
 
@@ -87,7 +93,14 @@ def sponsor():
     return render_template("sponsor.html")
 
 
+DbConfig(app)
+db.init_app(app)
+BlogConfig(app)
+
+
+
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
     app.secret_key = r"this is secret"
+    app.register_blueprint(blog)
     app.run(port=5000,debug=True)

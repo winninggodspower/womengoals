@@ -1,12 +1,13 @@
 <h2>Request To Join Volluteers</h2>
 
-<p>A request was sent from {{user.username}} to Volluteer for {{user.department}} department with the following information
+<p>A request was sent from <b style="text-transform: capitalize;">{{user.username}}</b> to Volluteer for <b>{{user.department}}</b> department with the following information 
 </p>
 <p>
     Username : {{user.username}} <br> 
     Phone : {{user.phone}} <br>
     Country: {{user.country}} <br>
     State: {{user.state}} <br>
+    Department: {{user.department}}
 </p>
 
 {% if user.note %}
