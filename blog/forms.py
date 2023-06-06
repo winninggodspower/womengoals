@@ -6,7 +6,7 @@ from flask_ckeditor import CKEditorField
 
 class BlogForm(FlaskForm):
     title = StringField('title', validators=[DataRequired()])
-    # slug
+    intro = StringField('intro')
     content = CKEditorField('content')
     image = FileField('image', validators=[
         FileRequired(),

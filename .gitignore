@@ -3,3 +3,26 @@ static/bootstrap-5.1.3/
 /venv
 /photos
 /instance
+
+# Flask environment
+venv/
+
+# Development server logs
+*.log
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+
+# Compiled Python files
+*.pyc
+
+# C extensions
+*.so
+
+# Database files
+*.db
+
+# IDE-specific files and directories
+.idea/
+.vscode/

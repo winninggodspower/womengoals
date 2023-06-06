@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from unicodedata import normalize
 from datetime import datetime
+from slugify import slugify
 
 db = SQLAlchemy()
 
@@ -16,6 +17,7 @@ class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
+    intro = db.Column(db.String(200), nullable=True)
     slug  = db.Column(db.String(255))
     content = db.Column(db.Text, nullable=False)
     image = db.Column(db.String(200))  # Change the size as per your needs
@@ -23,17 +25,7 @@ class Post(db.Model):
 
     def __init__(self, *args, **kwargs):
         if not 'slug' in kwargs:
-            kwargs['slug'] = self.slugify(kwargs.get('title', ''))
+            kwargs['slug'] = slugify(kwargs.get('title', ''))
         super().__init__(*args, **kwargs)
-
-    def slugify(self, text, encoding=None,
-        permitted_chars='abcdefghijklmnopqrstuvwxyz0123456789-'):
-
-        clean_text = text.strip().replace(' ', '-').lower()
-        while '--' in clean_text:
-            clean_text = clean_text.replace('--', '-')
-        ascii_text = normalize('NFKD', clean_text).encode('ascii', 'ignore')
-        strict_text = map(lambda x: str(x) if str(x) in permitted_chars else '', ascii_text)
-        return ''.join(strict_text)
     
     

@@ -36,6 +36,18 @@
             </div>
 
             <div class="mb-4">
+                {{ form.intro.label }}
+                {{ form.intro(size=100, class="form-control rounded-0") }}
+                {% if form.intro.errors %}
+                <ul class="text-danger">
+                    {% for error in form.intro.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div class="mb-4">
                 {{ form.content.label }}
                 {{ form.content }}
                 {% if form.content.errors %}
