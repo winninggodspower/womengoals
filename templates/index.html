@@ -543,7 +543,7 @@
 
 
           <form action="/" method="POST" role="form">
-
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="form-group">
               <label for="username">Fullname</label>
               <input type="text" name="username" required class="form-control text-white rounded-0 bg-dark border-white " id="username">

@@ -36,6 +36,7 @@
                 
                 <form action="" id="volunteer-form" method="POST" role="form" class="mx-auto ">
                     <legend>Join other vollunteers today!</legend>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 
                     <div class="form-group">
                         <input type="text" class="form-control" id="" name="username" required placeholder="Full name">

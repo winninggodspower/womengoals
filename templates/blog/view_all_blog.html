@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>Create Blog | Admin</title>
+    <title>Blogs</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-style.css') }}">
 {% endblock %}
 
@@ -34,10 +34,10 @@
                         </p>
                     </div>
                     {% if user_is_authenticated %}
-                      <form action="/blog/edit_post/{{post.title}}" class="d-inline" method="get">
+                      <form action="/blog/edit_blog/{{post.id}}" class="d-inline" method="get">
                         <button class="btn btn-warning text-white rounede-0" type="submit">Edit Blog</button>
                       </form>
-                      <form action="/blog/delete_blog/{{post.title}}" class="d-inline ms-3" method="post">
+                      <form action="/blog/delete_blog/{{post.id}}" class="d-inline ms-3" >
                         <button type="submit" class="text-warning border-0 bg-transparent align-bottom text-decoration-underline">delete</button>
                       </form>
                     {% endif %}

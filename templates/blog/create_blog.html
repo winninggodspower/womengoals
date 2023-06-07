@@ -10,7 +10,7 @@
         <h1 class="text-uppercase">Add Blog Post</h1>
 
         <form method="POST" action="/blog/create_blog" enctype="multipart/form-data">
-            {{ form.csrf_token }}
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="mb-4">
                 {{ form.title.label }}
                 {{ form.title(size=20, class="form-control rounded-0") }}
@@ -58,6 +58,7 @@
                 </ul>
                 {% endif %}
             </div>
+
             {{form.submit(class="btn btn-lg rounded-0 btn-warning")}}
         </form>
     
