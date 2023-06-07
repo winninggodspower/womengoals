@@ -1,6 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from unicodedata import normalize
-from datetime import datetime
 from slugify import slugify
 
 db = SQLAlchemy()

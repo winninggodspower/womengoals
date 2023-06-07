@@ -16,6 +16,7 @@ htmlcov/
 
 # Compiled Python files
 *.pyc
+__pycache__/
 
 # C extensions
 *.so

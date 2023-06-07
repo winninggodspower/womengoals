@@ -2,6 +2,7 @@
 
 {% block title %}
     <title>Create Blog | Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-style.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -21,166 +22,31 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                {% for post in all_blog  %}
+                {% for post in all_blogs  %}
                     <div class="post-preview">
-                        <a href="{{post.slug}}">
+                        <a href="/blog/{{post.slug}}">
                             <h2 class="post-title">{{ post.title }}</h2>
                             <h3 class="post-subtitle">{{ post.intro }}</h3>
                         </a>
                         <p class="post-meta">
                             Posted on
-                            on {{ post.date_posted.strftime("%d %B, %Y") }}
+                            {{ post.date_posted.strftime("%d %B, %Y") }}
                         </p>
                     </div>
+                    {% if user_is_authenticated %}
+                      <form action="/blog/edit_post/{{post.title}}" class="d-inline" method="get">
+                        <button class="btn btn-warning text-white rounede-0" type="submit">Edit Blog</button>
+                      </form>
+                      <form action="/blog/delete_blog/{{post.title}}" class="d-inline ms-3" method="post">
+                        <button type="submit" class="text-warning border-0 bg-transparent align-bottom text-decoration-underline">delete</button>
+                      </form>
+                    {% endif %}
                     <hr class="my-4">
                 {% endfor %}
                 
-               
             </div>
         </div>
     </div>
 
-<style>
-    h1{
-        font-size: 3rem;
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-weight: 800;
-        line-height: 1.2;
-    }
-
-header.masthead {
-    position: relative;
-    margin-bottom: 3rem;
-    padding-top: calc(8rem + 57px);
-    padding-bottom: 8rem;
-    background: no-repeat center center;
-    background-color: #6c757d;
-    background-size: cover;
-    background-attachment: scroll;
-  }
-  header.masthead:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #212529;
-    opacity: 0.5;
-  }
-  header.masthead .page-heading,
-  header.masthead .post-heading,
-  header.masthead .site-heading {
-    color: #fff;
-  }
-  header.masthead .page-heading,
-  header.masthead .site-heading {
-    text-align: center;
-  }
-  header.masthead .page-heading h1, header.masthead .page-heading .h1,
-  header.masthead .site-heading h1,
-  header.masthead .site-heading .h1 {
-    font-size: 3rem;
-  }
-  header.masthead .page-heading .subheading,
-  header.masthead .site-heading .subheading {
-    font-size: 1.5rem;
-    font-weight: 300;
-    line-height: 1.1;
-    display: block;
-    margin-top: 0.625rem;
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-  header.masthead .post-heading h1, header.masthead .post-heading .h1 {
-    font-size: 2.25rem;
-  }
-  header.masthead .post-heading .meta,
-  header.masthead .post-heading .subheading {
-    line-height: 1.1;
-    display: block;
-  }
-  header.masthead .post-heading .subheading {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0.75rem 0 2rem;
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-  header.masthead .post-heading .meta {
-    font-size: 1.25rem;
-    font-weight: 300;
-    font-style: italic;
-    font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-  header.masthead .post-heading .meta a {
-    color: #fff;
-  }
-  @media (min-width: 992px) {
-    header.masthead {
-      padding-top: 12.5rem;
-      padding-bottom: 12.5rem;
-    }
-    header.masthead .page-heading h1, header.masthead .page-heading .h1,
-    header.masthead .site-heading h1,
-    header.masthead .site-heading .h1 {
-      font-size: 5rem;
-    }
-    header.masthead .post-heading h1, header.masthead .post-heading .h1 {
-      font-size: 3.5rem;
-    }
-    header.masthead .post-heading .subheading {
-      font-size: 1.875rem;
-    }
-  }
-  
-  .section-heading {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-top: 3.75rem;
-  }
-  
-  .caption {
-    font-size: 0.875rem;
-    font-style: italic;
-    display: block;
-    margin: 0;
-    padding: 0.625rem;
-    text-align: center;
-  }
-  
-
-    .post-preview > a {
-        color: #212529;
-        text-decoration: none;
-    }
-    .post-preview > a:focus, .post-preview > a:hover {
-        text-decoration: none;
-        color: var(--amber);
-    }
-    .post-preview > a > .post-title {
-        font-size: 1.875rem;
-        margin-top: 1.875rem;
-        margin-bottom: 0.625rem;
-    }
-    .post-preview > a > .post-subtitle {
-        font-weight: 300;
-        margin-bottom: 0.625rem;
-    }
-    .post-preview > .post-meta {
-        font-size: 1.125rem;
-        font-style: italic;
-        margin-top: 0;
-        color: #6c757d;
-    }
-    .post-preview > .post-meta > a {
-        text-decoration: none;
-    }
-    @media (min-width: 992px) {
-    .post-preview > a > .post-title {
-        font-size: 2.25rem;
-    }
-    }
-</style>
 
 {% endblock %}
