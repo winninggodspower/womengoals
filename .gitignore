@@ -1,7 +1,8 @@
 static/bootstrap-5.1.3/
 .env
 /venv
-/photos
+static/uploads/
+photos/
 /instance
 
 # Flask environment

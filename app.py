@@ -101,6 +101,6 @@ BlogConfig(app)
 
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
-    app.secret_key = r"this is secret"
+    app.secret_key = os.environ.get("FLASK_SECRET_KEY")
     app.register_blueprint(blog)
     app.run(port=5000,debug=True)
