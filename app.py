@@ -2,7 +2,6 @@ from flask import Flask, redirect, url_for, render_template, request, flash
 from flask_mail import Mail, Message
 import os
 from dotenv import load_dotenv
-import dotenv
 
 load_dotenv()  # take environment variables from .env.
 
@@ -105,8 +104,8 @@ BlogConfig(app)
 
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
-    app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY")
-    app.config['WTF_CSRF_SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY")
+    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+    app.config['WTF_CSRF_SECRET_KEY'] = os.environ.get("SECRET_KEY")
     print(app.config.get('SECRET_KEY'))
     app.register_blueprint(blog)
     app.run(port=5000,debug=False)
