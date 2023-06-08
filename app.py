@@ -100,12 +100,12 @@ DbConfig(app)
 db.init_app(app)
 BlogConfig(app)
 
+#DEBUG is SET to TRUE. CHANGE FOR PROD
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['WTF_CSRF_SECRET_KEY'] = os.environ.get("SECRET_KEY")
+print(app.config.get('SECRET_KEY'))
+app.register_blueprint(blog)
 
 
 if __name__ == '__main__':
-    #DEBUG is SET to TRUE. CHANGE FOR PROD
-    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
-    app.config['WTF_CSRF_SECRET_KEY'] = os.environ.get("SECRET_KEY")
-    print(app.config.get('SECRET_KEY'))
-    app.register_blueprint(blog)
     app.run(port=5000,debug=False)
