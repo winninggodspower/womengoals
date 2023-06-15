@@ -1,6 +1,6 @@
 <?php
-// receiver email is gotten from command line argument => $argv[1]
-// sender email is gotten from config.ini file
+// email message is gotten from command line argument => $argv[1]
+// receiver and sender email is gotten from config.ini file
 
 $config = parse_ini_file('config.ini');
 

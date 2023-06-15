@@ -1,7 +1,7 @@
-import subprocess
 from flask import Flask, redirect, url_for, render_template, request, flash
 from flask_mail import Mail, Message
 import os
+from email_utils import send_volunteer_email_php
 from dotenv import load_dotenv
 
 load_dotenv()  # take environment variables from .env.
@@ -28,29 +28,6 @@ app.config.update(dict(
 ))
 app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 mail = Mail(app)
-
-
-def send_volunteer_email(user_info):
-    msg = Message(
-        f"{user_info['username']} volluntered to womensgoal",
-        sender = os.environ.get("EMAIL_ID"),
-        recipients= ['winninggodspower@gmail.com',]
-    )
-
-    msg.html = render_template("volunteer_email.html", user = user_info)
-    mail.send(msg)
-    return
-
-
-def send_volunteer_email_php(user_info):
-        msg = render_template("contact_email.html", user = user_info)
-
-        # Command to run the PHP script
-        command = ['php', 'php_email_scripts/volunteer_email.php', msg]
-
-        # Run the PHP script from Python
-        subprocess.run(command)
-        return
     
 def send_contact_email(user_info):
     msg = Message(
@@ -74,9 +51,8 @@ def home():
             message = request.form.get("message"),
         )
         
-        print('step 1')
         send_contact_email(user_info)
-        print('step 2')
+
         flash("Youv've successfully contacted womensgoal. We'll reply your message soon. ", "Success")
         return render_template('index.html')
 
@@ -93,7 +69,6 @@ def volunteer():
             department = request.form.get("department"),
             note = request.form.get("note"),
         )
-        print(user_info)
         
         send_volunteer_email_php(user_info)
         return render_template('thanks.html')
