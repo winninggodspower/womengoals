@@ -5,14 +5,14 @@
 $config = parse_ini_file('config.ini');
 
 if (count($argv) < 2) {
-    echo "Please provide the recipient's email address as a command-line argument.";
+    echo "Please provide the email message as command-line arguments.";
     exit;
 }
 
+$to = $config['RECEIVER_EMAIL'];
 $from = $config['SENDER_EMAIL'];
-$to = $argv[1];
+$message = $argv[1];
 $subject = "Someone Volluntered To Womensgoal";
-$message = "This is a test email.";
 
 $headers = "From: $from\r\n";
 $headers .= "Reply-To: $from\r\n";
@@ -24,4 +24,5 @@ if (mail($to, $subject, $message, $headers)) {
 } else {
     echo "Email sending failed.";
 }
+
 ?>

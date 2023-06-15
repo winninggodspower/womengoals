@@ -1,17 +1,23 @@
-<h2>Request To Join Volluteers</h2>
+<h3>Request To Volluteers To Womengoalsempowermentinitiative</h3>
 
-<p>A request was sent from <b style="text-transform: capitalize;">{{user.username}}</b> to Volluteer for <b>{{user.department}}</b> department with the following information 
-</p>
-<p>
-    Username : {{user.username}} <br> 
-    Phone : {{user.phone}} <br>
-    Country: {{user.country}} <br>
-    State: {{user.state}} <br>
-    Department: {{user.department}}
-</p>
+
+<span>name : {{user.username}} </span>
+<hr> 
+
+<span>phone : {{user.phone}} </span>
+<hr>
+
+<span>country: {{user.country}} </span>
+<hr>
+
+<span>state: {{user.state}} </span>
+<hr>
+
+<span>department: {{user.department}}</span>
+<hr>
 
 {% if user.note %}
-    <h3>{{user.username}} left a note:</h3>
-    <p>{{user.note}}</p>
+    note: <br>
+    <span>{{user.note}}</span>
 
 {% endif %}
