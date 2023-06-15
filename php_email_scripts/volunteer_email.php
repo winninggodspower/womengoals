@@ -9,7 +9,7 @@ if (count($argv) < 2) {
     exit;
 }
 
-$from = $config['SENDER_EMAIL']
+$from = $config['SENDER_EMAIL'];
 $to = $argv[1];
 $subject = "Someone Volluntered To Womensgoal";
 $message = "This is a test email.";
