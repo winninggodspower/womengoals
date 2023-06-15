@@ -1,7 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request, flash
-from flask_mail import Mail, Message
 import os
-from email_utils import send_volunteer_email_php
+from email_utils import send_volunteer_email_php, send_contact_email_php
 from dotenv import load_dotenv
 
 load_dotenv()  # take environment variables from .env.
@@ -12,36 +11,9 @@ from blog import db, DbConfig
 from blog.blog import BlogConfig
 
 app = Flask(__name__)
-mail = Mail(app)
 
-
-
-#configuration of mail
-app.config.update(dict(
-    DEBUG = True,
-    MAIL_SERVER = 'mail.womengoalsempowermentinitiatives.com',
-    MAIL_PORT = 465,
-    MAIL_USE_TLS = True,
-    MAIL_USE_SSL = False,
-    MAIL_USERNAME = os.environ.get("EMAIL_ID"),
-    MAIL_PASSWORD = os.environ.get("EMAIL_PW"),
-))
 app.config['CKEDITOR_PKG_TYPE'] = 'basic'
-mail = Mail(app)
-    
-def send_contact_email(user_info):
-    msg = Message(
-        f"{user_info['username']} contacted womensgoal",
-        sender = user_info["email"],
-        recipients= ['winninggodspower@gmail.com',]
-    )
 
-    msg.html = render_template("contact_email.html", user = user_info)
-    mail.send(msg)
-    return
-
-
-app=Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def home():
     if request.method == 'POST':
@@ -51,7 +23,7 @@ def home():
             message = request.form.get("message"),
         )
         
-        send_contact_email(user_info)
+        send_contact_email_php(user_info)
 
         flash("Youv've successfully contacted womensgoal. We'll reply your message soon. ", "Success")
         return render_template('index.html')
