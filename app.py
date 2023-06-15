@@ -18,8 +18,8 @@ mail = Mail(app)
 #configuration of mail
 app.config.update(dict(
     DEBUG = True,
-    MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = 587,
+    MAIL_SERVER = 'mail.womengoalsempowermentinitiatives.com',
+    MAIL_PORT = 465,
     MAIL_USE_TLS = True,
     MAIL_USE_SSL = False,
     MAIL_USERNAME = os.environ.get("EMAIL_ID"),
@@ -33,7 +33,7 @@ def send_volunteer_email(user_info):
     msg = Message(
         f"{user_info['username']} volluntered to womensgoal",
         sender = os.environ.get("EMAIL_ID"),
-        recipients= [os.environ.get("EMAIL_ID"),]
+        recipients= ['winninggodspower@gmail.com',]
     )
 
     msg.html = render_template("volunteer_email.html", user = user_info)
@@ -44,7 +44,7 @@ def send_contact_email(user_info):
     msg = Message(
         f"{user_info['username']} contacted womensgoal",
         sender = user_info["email"],
-        recipients= [os.environ.get("EMAIL_ID"),]
+        recipients= ['winninggodspower@gmail.com',]
     )
 
     msg.html = render_template("contact_email.html", user = user_info)
@@ -62,7 +62,9 @@ def home():
             message = request.form.get("message"),
         )
         
+        print('step 1')
         send_contact_email(user_info)
+        print('step 2')
         flash("Youv've successfully contacted womensgoal. We'll reply your message soon. ", "Success")
         return render_template('index.html')
 
@@ -107,4 +109,4 @@ app.register_blueprint(blog)
 
 
 if __name__ == '__main__':
-    app.run(port=5000,debug=False)
+    app.run(port=5000, debug=False)
